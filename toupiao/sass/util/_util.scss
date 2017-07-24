@@ -1,0 +1,29 @@
+@mixin clear {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+$basefontsize: 100px;
+@function px2Rem($px) {
+  @return ($px/ $basefontsize) * 1rem;
+}
+
+@mixin bg($module,$name){
+  background-image: url(../images/#{$module}/#{$name}.png);
+  background-size: contain;
+  background-repeat:no-repeat;
+}
+@mixin bg_repeat($module,$name){
+  background-image: url(../images/#{$module}/#{$name}.png);
+}
